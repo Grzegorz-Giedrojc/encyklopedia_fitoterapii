@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html lang="pl">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <div>
-    <h1><a href="/">Django Girls Blog</a></h1>
-    </div>
+{% extends 'encyklopedia_app/base.html' %}
 
+{% block content %}
     {% for post in posts %}
-        <div>
-            <p>published: {{ post.published_date }}</p>
-            <h2><a href="">{{ post.tytul }}</a></h2>
-            <p>{{ post.text|linebreaksbr }}</p>
-        </div>
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.nazwa }}</a></h2>
+        <p><img src="{{post.zdjecie.url}}" class="img-fluid rounded" alt= "zdjecie samochodu"/></p>
+        <p>{{ post.opis|linebreaksbr }}</p>
+    </div>
     {% endfor %}
-  </body>
-</html>
+{% endblock %}

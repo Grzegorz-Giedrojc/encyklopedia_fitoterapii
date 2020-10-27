@@ -1,0 +1,40 @@
+html, body{
+  height: 100%;
+}
+
+footer{
+  background-color: #ededed;
+  position: relative;
+  height: 70px;
+  width: 100%;
+  margin-top: -70px;
+  clear: both;
+}
+
+nav{
+  background-color: #ededed;
+}
+
+a{
+  color:black;
+}
+
+a:hover{
+  color: black;
+  text-decoration:none;
+}
+
+.post{
+  border-left: 6px solid #0366fc;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.container{
+  min-height: 100%;
+}
+
+.content{
+  overflow: auto;
+  padding-bottom: 70px;
+}
