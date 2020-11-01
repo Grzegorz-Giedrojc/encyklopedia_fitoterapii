@@ -3,10 +3,12 @@
 {% block content %}
     {% for post in posts %}
     <div>
+      <a href="{% url 'post_detail' pk=post.pk %}">
         <p>published: {{ post.published_date }}</p>
-        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.nazwa }}</a></h2>
+        <h2>{{ post.nazwa }}</h2>
         <p><img src="{{post.zdjecie.url}}" class="img-fluid rounded" alt= "zdjecie samochodu"/></p>
         <p>{{ post.opis|linebreaksbr }}</p>
+      </a>
     </div>
     {% endfor %}
 {% endblock %}
