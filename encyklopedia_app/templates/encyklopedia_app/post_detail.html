@@ -1,13 +1,10 @@
 {% extends 'encyklopedia_app/base.html' %}
 
 {% block content %}
-    <li>
-      <a href="opisy/kurkuma.html">
-        <div class="element">
-          <!--<p><img src="{{post.zdjecie.url}}" class="img-fluid rounded" alt= "zdjecie samochodu"/></p>-->
-          <h3>{{ post.nazwa }}</h3>
-          <p>{{ post.opis|linebreaksbr }}</p>
-        </div>
-      </a>
-    </li>
+    <div>
+      <p>published: {{ post.published_date }}</p>
+      <h2>{{ post.nazwa }}</h2>
+      <p><img src="{{post.zdjecie.url}}" class="img-fluid rounded" alt= "zdjecie samochodu"/></p>
+      <p>{{ post.opis|linebreaksbr }}</p>
+    </div>
 {% endblock %}

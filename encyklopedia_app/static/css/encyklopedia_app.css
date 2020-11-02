@@ -3,10 +3,6 @@ html, body{
   height: 100%;
 }
 
-body {
-  margin-bottom: 40px;
-}
-
 /*NAVBAR*/
 
 .tytul{
@@ -100,6 +96,11 @@ footer{
     -moz-transform 0.3s ease-in-out;
     transition: all 0.3s ease-in-out,
     transform 0.3s ease-in-out, ;
+
+  background-image: url({{post.zdjecie.url}});
+  background: linear-gradient( rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.10)), url({{post.zdjecie.url}});
+  background-position: center;
+  background-size: auto;
 }
 
 .element:hover {
@@ -107,9 +108,10 @@ footer{
 }
 
 .opis {
+  margin-top: -250px;
 	position: absolute;
 	width: inherit;
-	height: inherit;
+	height: inherit;s
 }
 
 .opis h3 {
@@ -129,4 +131,31 @@ footer{
 	margin: 0 30px;
 	font-size: 14px;
 	line-height: 2;
+}
+
+.paginator {
+  text-align: center;
+  color: white;
+}
+
+.paginator-arrow {
+  padding: 1em;
+  color: #1c1f1f;
+  margin: 0 0.1em;
+  display: inline-block;
+  font-size: 1.5em;
+}
+
+.paginator-arrow:hover {
+  color: #090a0a;
+}
+
+.paginator-number {
+  padding: 1em;
+  background-color: #1c1f1f;
+  border-radius: 10px;
+}
+
+.paginator-number:hover, .paginator-current {
+  background-color: #090a0a;
 }

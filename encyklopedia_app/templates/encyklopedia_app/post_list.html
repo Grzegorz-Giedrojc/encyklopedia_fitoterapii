@@ -1,14 +1,47 @@
 {% extends 'encyklopedia_app/base.html' %}
 
 {% block content %}
+
     {% for post in posts %}
-    <div>
+    <li>
       <a href="{% url 'post_detail' pk=post.pk %}">
-        <p>published: {{ post.published_date }}</p>
-        <h2>{{ post.nazwa }}</h2>
-        <p><img src="{{post.zdjecie.url}}" class="img-fluid rounded" alt= "zdjecie samochodu"/></p>
-        <p>{{ post.opis|linebreaksbr }}</p>
+        <div class="element">
+        <img src="{{post.zdjecie.url}}" class="img-fluid rounded" alt= "zdjecie rośliny"/>
+          <div class="opis" >
+            <h3 style="text-transform: uppercase;">{{ post.nazwa }}</h3>
+            <p>{{ post.krotki_opis }}</p>
+          </div>
+        </div>
       </a>
-    </div>
+    </li>
     {% endfor %}
+
+    <div class="paginator">
+      {% if posts.has_previous %}
+      <a class="paginator-arrow" href="?page=1" style=""><i class="fas fa-angle-double-left"></i></a>
+      <a class="paginator-arrow" href="?page={{ posts.previous_page_number }}"><i class="fas fa-angle-left"></i></a>
+
+      {% endif %}
+
+      {% for num in posts.paginator.page_range %}
+
+        {%  if posts.number == num %}
+
+            <span class="paginator-number paginator-current" style="color: white; text-decoration: inherit;">{{ num }}</span>
+
+        {% elif num > posts.number|add:'-3' and num < posts.number|add:'3' %}
+
+            <a class="paginator-number" href="?page={{ num }}" style="color: white; text-decoration: inherit;">{{ num }}</a>
+
+        {% endif %}
+
+      {% endfor %}
+
+      {% if posts.has_next %}
+
+      <a class="paginator-arrow" href="?page={{ posts.next_page_number }}"><i class="fas fa-angle-right"></i></a>
+      <a class="paginator-arrow" href="?page={{ posts.paginator.num_pages }}"><i class="fas fa-angle-double-right"></i></a>
+
+      {% endif %}
+    </div>
 {% endblock %}
