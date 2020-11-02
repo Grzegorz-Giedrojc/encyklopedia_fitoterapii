@@ -97,7 +97,6 @@ footer{
     transition: all 0.3s ease-in-out,
     transform 0.3s ease-in-out, ;
 
-  background-image: url({{post.zdjecie.url}});
   background: linear-gradient( rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.10)), url({{post.zdjecie.url}});
   background-position: center;
   background-size: auto;
@@ -107,11 +106,14 @@ footer{
 	transform: scale(1.06);
 }
 
+.element img{
+  object-fit: cover;
+}
+
 .opis {
-  margin-top: -250px;
 	position: absolute;
 	width: inherit;
-	height: inherit;s
+	height: inherit;
 }
 
 .opis h3 {
