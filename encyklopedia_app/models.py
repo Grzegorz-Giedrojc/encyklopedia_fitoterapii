@@ -5,7 +5,7 @@ from django.utils import timezone
 
 class Post(models.Model):
     autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    nazwa = models.CharField(max_length=200)
+    nazwa = models.CharField(max_length=200, unique=True)
     krotki_opis = opis = models.TextField()
     opis = models.TextField()
     choroby = models.TextField()

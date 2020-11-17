@@ -5,6 +5,10 @@ html, body{
 
 /*NAVBAR*/
 
+.navbar{
+  background-color: rgba(0,132,255,0.3);
+}
+
 .tytul{
   text-align: center;
 }
@@ -161,3 +165,5 @@ footer{
 .paginator-number:hover, .paginator-current {
   background-color: #090a0a;
 }
+
+/*DETAIL*/

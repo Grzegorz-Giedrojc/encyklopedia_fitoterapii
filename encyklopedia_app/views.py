@@ -4,7 +4,7 @@ from .models import Post
 from django.core.paginator import Paginator
 
 def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('nazwa')
 
     paginator = Paginator(posts,3)
 

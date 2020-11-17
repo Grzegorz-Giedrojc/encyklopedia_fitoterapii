@@ -1,10 +1,39 @@
 {% extends 'encyklopedia_app/base.html' %}
 
 {% block content %}
-    <div>
-      <p>published: {{ post.published_date }}</p>
-      <h2>{{ post.nazwa }}</h2>
-      <p><img src="{{post.zdjecie.url}}" class="img-fluid rounded" alt= "zdjecie rośliny"/></p>
-      <p>{{ post.opis|linebreaksbr }}</p>
+    <div class="jumbotron ">
+      <div class="container">
+        <div class="row" style="margin-top: 20px;">
+          <img src="{{post.zdjecie.url}}" class="img-fluid rounded col-md-4" style="object-fit: cover;" alt= "zdjecie rośliny"/>
+
+          <p class="col-md-7 text-justify"><br class="d-md-none"/>{{ post.opis|linebreaksbr }}</p>
+        </div>
+        <p style="text-align: left;">
+          &copy; Pixabay
+        </p>
+        <br />
+        <hr />
+        <br />
+        <div>
+          <p class="display-4" style="text-align: left;">
+            Na co pomaga?
+          </p>
+          <p class="text-justify">
+            {{ post.choroby|linebreaksbr }}
+          </p>
+          <br />
+          <hr />
+          <br />
+          <div>
+            <p class="display-4" style="text-align: left;">
+              Stosowanie
+            </p>
+            <p class="text-justify">
+              {{ post.zastosowanie|linebreaksbr }}
+            </p>
+        </div>
+      </div>
     </div>
+    <br />
+  </div>
 {% endblock %}
