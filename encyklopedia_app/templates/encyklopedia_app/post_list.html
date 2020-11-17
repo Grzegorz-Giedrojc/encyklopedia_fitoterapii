@@ -5,9 +5,7 @@
     {% for post in posts %}
     <li>
       <a href="{% url 'post_detail' pk=post.pk %}">
-        <div class="element" style="background: linear-gradient( rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.10)), url({{post.zdjecie.url}});
-        background-position: center;
-        background-size: auto;">
+        <div class="element" style="background: url({{post.zdjecie.url}}); height: 100%; width: 100%; background-position: center;">
           <div class="opis" >
             <h3 style="text-transform: uppercase;">{{ post.nazwa }}</h3>
             <p>{{ post.krotki_opis }}</p>

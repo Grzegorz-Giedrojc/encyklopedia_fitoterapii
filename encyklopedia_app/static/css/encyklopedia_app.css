@@ -100,10 +100,6 @@ footer{
     -moz-transform 0.3s ease-in-out;
     transition: all 0.3s ease-in-out,
     transform 0.3s ease-in-out, ;
-
-  background: linear-gradient( rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.10)), url({{post.zdjecie.url}});
-  background-position: center;
-  background-size: auto;
 }
 
 .element:hover {
