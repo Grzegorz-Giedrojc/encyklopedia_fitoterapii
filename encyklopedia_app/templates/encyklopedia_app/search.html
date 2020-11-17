@@ -1,0 +1,18 @@
+{% extends 'encyklopedia_app/base.html' %}
+
+{% block content %}
+
+  {% for post in posts %}
+  <li>
+    <a href="{% url 'post_detail' pk=post.pk %}">
+      <div class="element" style="background: url({{post.zdjecie.url}}); height: 100%; width: 100%; background-position: center;">
+        <div class="opis" >
+          <h3 style="text-transform: uppercase;">{{ post.nazwa }}</h3>
+          <p>{{ post.krotki_opis }}</p>
+        </div>
+      </div>
+    </a>
+  </li>
+  {% endfor %}
+
+{% endblock %}

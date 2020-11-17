@@ -100,6 +100,7 @@ footer{
     -moz-transform 0.3s ease-in-out;
     transition: all 0.3s ease-in-out,
     transform 0.3s ease-in-out, ;
+    background: linear-gradient( rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.10));
 }
 
 .element:hover {
@@ -114,6 +115,7 @@ footer{
 	position: absolute;
 	width: inherit;
 	height: inherit;
+  /*text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -1px black;*/
 }
 
 .opis h3 {
@@ -163,3 +165,13 @@ footer{
 }
 
 /*DETAIL*/
+
+.naglowek-nazwa{
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 25px;
+  margin-top: -25px;
+  font-family: 'Bree Serif', serif;
+	font-weight: 400;
+	font-size: 4em;
+}
