@@ -8,19 +8,23 @@
     <meta name="description" content="Internetowa encyklopedia ziołolecznictwa" />
     <meta name="keywords" content="fioterepia, ziołolecznictwo, zioła, encyklopedia," />
     <meta name="author" content="Grzegorz Giedrojć" />
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static '/css/encyklopedia_app.css' %}" >
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/css/tether.min.css" />
 
-    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+    <script src="https://kit.fontawesome.com/62005719a4.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js"></script>
@@ -34,8 +38,8 @@
       <nav class="navbar navbar-expand-md navbar-dark bg-fade fixed-top">
         <a
           class="navbar-brand"
-          href="index.html">
-          <img src="img/logo.png" height="38px" width="50px" alt="Logo serwisu"/>
+          href="{% url 'post_list' %}">
+          <img src="/static/img/logo.png" height="38px"  alt="Logo serwisu"/>
         </a>
 
         <button
@@ -56,24 +60,24 @@
             <li class="nav-item active">
               <a
                 class="nav-link"
-                href="index.html">
-                Fitoterapia
+                href="#">
+                <i class="fas fa-leaf"></i>&nbsp;Fitoterapia
               </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item active">
               <a
                 class="nav-link"
                 href="{% url 'post_list' %}">
-                Encyklopedia&nbsp;ziół
+                <i class="fas fa-book"></i>&nbsp;Encyklopedia&nbsp;ziół
               </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item active">
               <a
                 class="nav-link"
-                href="o_aplikacji.html">
-                O&nbsp;aplikacji
+                href="#">
+              <i class="fas fa-info"></i>&nbsp;O&nbsp;aplikacji
               </a>
             </li>
           </ul>
@@ -82,8 +86,8 @@
             <input
               class="form-control mr-sm-2"
               type="search"
-              placeholder="Szukaj"
-              aria-label="Szukaj" id="search" name="search">
+              placeholder="&#xF002; Szukaj"
+              aria-label="Szukaj" style="font-family:Arial, FontAwesome" id="search" name="search">
             <button
               class="btn btn-success my-2 my-sm-0"
               type="submit">
@@ -129,7 +133,7 @@
             <a href="https://www.instagram.com/?hl=pl" class="btn btn-social-icon btn-instagram" target="_blank">
               <i class="fa fa-instagram"></i>
             </a>
-            <a href="o_aplikacji.html" class="btn btn-social-icon btn-email">
+            <a href="#" class="btn btn-social-icon btn-email">
               <i class="fa fa-envelope-o"></i>
             </a>
           </div>
