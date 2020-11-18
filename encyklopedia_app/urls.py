@@ -10,6 +10,9 @@ urlpatterns = [
     path('', views.post_list, name='post_list'),
     path('post/<int:pk>/', views.post_detail, name='post_detail'),
     path('search/', views.search, name='search'),
+    path('fitoterapia/',views.fitoterapia, name="fitoterapia"),
+    path('o_aplikacji/',views.o_aplikacji, name="o_aplikacji"),
+    path('domowa_apteczka/',views.domowa_apteczka, name="domowa_apteczka"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

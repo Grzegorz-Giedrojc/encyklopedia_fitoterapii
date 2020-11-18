@@ -35,7 +35,7 @@
   <body>
     <header>
 
-      <nav class="navbar navbar-expand-md navbar-dark bg-fade fixed-top">
+      <nav class="navbar navbar-scroll navbar-expand-lg navbar-dark bg-fade fixed-top">
         <a
           class="navbar-brand"
           href="{% url 'post_list' %}">
@@ -60,7 +60,7 @@
             <li class="nav-item active">
               <a
                 class="nav-link"
-                href="#">
+                href="{% url 'fitoterapia' %}">
                 <i class="fas fa-leaf"></i>&nbsp;Fitoterapia
               </a>
             </li>
@@ -76,8 +76,16 @@
             <li class="nav-item active">
               <a
                 class="nav-link"
-                href="#">
+                href="{% url 'o_aplikacji' %}">
               <i class="fas fa-info"></i>&nbsp;O&nbsp;aplikacji
+              </a>
+            </li>
+
+            <li class="nav-item active">
+              <a
+                class="nav-link"
+                href="{% url 'domowa_apteczka' %}">
+              <i class="fas fa-first-aid"></i>&nbsp;Domowa&nbsp;apteczka
               </a>
             </li>
           </ul>

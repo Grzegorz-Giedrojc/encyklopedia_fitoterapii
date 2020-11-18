@@ -27,3 +27,12 @@ def search(request):
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'encyklopedia_app/post_detail.html', {'post': post})
+
+def fitoterapia(request):
+    return render(request, 'encyklopedia_app/fitoterapia.html', {})
+
+def o_aplikacji(request):
+    return render(request, 'encyklopedia_app/o_aplikacji.html', {})
+
+def domowa_apteczka(request):
+    return render(request, 'encyklopedia_app/domowa_apteczka.html', {})

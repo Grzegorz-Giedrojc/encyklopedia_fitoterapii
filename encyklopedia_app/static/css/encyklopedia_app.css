@@ -5,10 +5,6 @@ html, body{
 
 /*NAVBAR*/
 
-.navbar{
-  background-color: rgba(0,132,255,0.3);
-}
-
 .tytul{
   text-align: center;
 }
@@ -19,8 +15,13 @@ html, body{
   margin-bottom: 0;
 }
 
+.nav-link:hover{
+  font-size: 1.05em;
+  transition: font-size 0.2s;
+}
+
 .navbar-scroll {
-  background-color: rgba(0,132,255,0.45);
+  background-color: rgba(0,132,255,0.7);
   transition: background-color 0.5s;
 }
 
@@ -51,6 +52,26 @@ footer{
   clear: both;
   text-align: center;
   color: #ddd;
+}
+
+.fa-facebook:hover{
+  color: #3b5998;
+  transition: color 0.2s;
+}
+
+.fa-twitter:hover{
+  color: #00acee;
+  transition: color 0.2s;
+}
+
+.fa-instagram:hover{
+  color: #C13584;
+  transition: color 0.2s;
+}
+
+.fa-envelope-o:hover{
+  color: #d0f2eb;
+  transition: color 0.2s;
 }
 
 /*post_list*/
@@ -115,7 +136,6 @@ footer{
 	position: absolute;
 	width: inherit;
 	height: inherit;
-  /*text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -1px black;*/
 }
 
 .opis h3 {
