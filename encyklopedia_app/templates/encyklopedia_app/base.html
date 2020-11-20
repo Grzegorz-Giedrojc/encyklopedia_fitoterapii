@@ -88,6 +88,14 @@
               <i class="fas fa-first-aid"></i>&nbsp;Domowa&nbsp;apteczka
               </a>
             </li>
+
+            <li class="nav-item active">
+              <a
+                class="nav-link"
+                href="{% url 'register' %}">
+              <i class="fas fa-feather-alt"></i>&nbsp;Rejestracja
+              </a>
+            </li>
           </ul>
 
           <form class="form-inline my-2 my-lg-0" method="get" action="/search">
@@ -113,14 +121,9 @@
       </div>
 
     </header>
-    <div class="jumbotron" style="margin-bottom: 0;">
-      <div class="zbior">
-        <ul class="pod-zbior">
-          {% block content %}
-          {% endblock %}
-        </ul>
-      </div>
-    </div>
+
+      {% block content %}
+      {% endblock %}
 
     <footer>
       <div class="container-fluid bg-primary">

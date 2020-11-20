@@ -1,0 +1,13 @@
+{% extends 'encyklopedia_app/base.html' %}
+
+{% block title %}Zarejestruj się{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <form class="form-group" method="POST">
+    {% csrf_token %}
+    {{form|crispy}}
+    <button type="submit" class="btn btn-success">Zarejestruj się</button>
+  </form>
+{% endblock %}
