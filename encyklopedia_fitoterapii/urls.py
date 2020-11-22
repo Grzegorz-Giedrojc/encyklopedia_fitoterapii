@@ -25,6 +25,7 @@ urlpatterns=[
     path('admin/', admin.site.urls),
     path('', include('encyklopedia_app.urls')),
     path('register/', v.register, name="register"),
+    path('', include("django.contrib.auth.urls")),
 ]
 
 if settings.DEBUG:

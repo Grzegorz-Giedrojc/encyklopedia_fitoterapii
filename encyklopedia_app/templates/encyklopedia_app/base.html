@@ -81,6 +81,15 @@
               </a>
             </li>
 
+            {% if user.is_authenticated %}
+            <li class="nav-item active">
+              <a
+                class="nav-link"
+                href="{% url 'logout' %}">
+              <i class="fas fa-feather-alt"></i>&nbsp;Wyloguj się
+              </a>
+            </li>
+
             <li class="nav-item active">
               <a
                 class="nav-link"
@@ -88,7 +97,7 @@
               <i class="fas fa-first-aid"></i>&nbsp;Domowa&nbsp;apteczka
               </a>
             </li>
-
+            {% else %}
             <li class="nav-item active">
               <a
                 class="nav-link"
@@ -96,9 +105,19 @@
               <i class="fas fa-feather-alt"></i>&nbsp;Rejestracja
               </a>
             </li>
+
+            <li class="nav-item active">
+              <a
+                class="nav-link"
+                href="{% url 'login' %}">
+              <i class="fas fa-feather-alt"></i>&nbsp;Zaloguj się
+              </a>
+            </li>
+            {% endif %}
+
           </ul>
 
-          <form class="form-inline my-2 my-lg-0" method="get" action="/search">
+          <form class="form-inline my-2 my-lg-0" method="GET" action="/search">
             <input
               class="form-control mr-sm-2"
               type="search"
@@ -110,7 +129,6 @@
               Wyszukaj
             </button>
           </form>
-
         </div>
       </nav>
 
