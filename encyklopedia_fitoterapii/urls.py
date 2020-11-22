@@ -19,10 +19,12 @@ from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.conf.urls import url
+from register import views as v
 
 urlpatterns=[
     path('admin/', admin.site.urls),
     path('', include('encyklopedia_app.urls')),
+    path('register/', v.register, name="register"),
 ]
 
 if settings.DEBUG:

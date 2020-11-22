@@ -4,6 +4,9 @@ from .models import Post
 from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.db.models import Q
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect
 
 
 def post_list(request):
