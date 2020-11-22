@@ -126,7 +126,7 @@ footer{
     -moz-transform 0.3s ease-in-out;
     transition: all 0.3s ease-in-out,
     transform 0.3s ease-in-out, ;
-
+    background: linear-gradient( rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.10));
 }
 
 .element:hover {
@@ -200,4 +200,10 @@ footer{
   font-family: 'Bree Serif', serif;
 	font-weight: 400;
 	font-size: 4em;
+}
+
+/* OGÓLNE */
+
+.center{
+  text-align: center;
 }

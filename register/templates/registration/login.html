@@ -5,12 +5,16 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+<div class="jumbotron mb-0"
   <form class="form-group" method="POST">
     {% csrf_token %}
     {{form|crispy}}
-    <button type="submit" class="btn btn-success">Zaloguj się</button>
+    <div class="row justify-content-center">
+      <button type="submit" class="btn btn-success col-3">Zaloguj się</button>
+    </div>
     <p>
       Nie masz konta? Zarejestruj się <a href="/register">tutaj</a>
     </p>
   </form>
+</div>
 {% endblock %}
