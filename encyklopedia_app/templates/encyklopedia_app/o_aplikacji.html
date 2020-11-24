@@ -19,30 +19,28 @@
     <br />
 
     <section>
-      <h1 class="display-4" style="text-align:center;">Skontaktuj się z nami!</h1>
+      <h1 class="display-4 center">Skontaktuj się z nami!</h1>
         <br /><br />
-      <form>
-        <div class="row">
-          <div class="col">
-            <input type="text" class="form-control" placeholder="Imię">
-          </div>
-          <div class="col">
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="E-mail">
-          </div>
-        </div>
+      <form action="" method="POST">
+        {% csrf_token %}
 
-      </br>
+        {% for hidden in form.hidden_fields %}
+        {{ hidden }}
+        {% endfor %}
 
+        {% for field in form.visible_fields %}
         <div class="form-group">
-          <label for="exampleFormControlTextarea1">O czym chcesz do nas napisać?</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+            {{ field.errors }}
+            <label>{{ field.label_tag }}</label>
+            <p>{{ field }}</p>
         </div>
+        {% endfor %}
+
+        <button type="reset" class="btn btn-secondary">Reset</button>
+         <button type="submit" class="btn btn-primary">Submit</button>
 
       </br>
-
-        <div  class="text-center">
-          <button  href="#" type="submit" class="btn btn-primary" style="width: 50%;">Wyślij</button>
-        </div>
+      </br>
       </form>
     </section>
   </div>

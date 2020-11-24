@@ -7,6 +7,9 @@ from django.db.models import Q
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
+from .forms import ContactForm
+from django.core.mail import send_mail, BadHeaderError
+from django.conf import settings
 
 
 def post_list(request):
@@ -35,7 +38,20 @@ def fitoterapia(request):
     return render(request, 'encyklopedia_app/fitoterapia.html', {})
 
 def o_aplikacji(request):
-    return render(request, 'encyklopedia_app/o_aplikacji.html', {})
+    form = ContactForm()
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = f'Message from {form.cleaned_data["name"]}'
+            message = form.cleaned_data["message"]
+            recipients = ['grzesiekodkrywaja@gmail.com']
+            try:
+                send_mail(subject, message, forms.email, recipients, fail_silently=True)
+            except BadHeaderError:
+                return HttpResponse('Invalid header found')
+            return HttpResponse('Success...Your email has been sent')
+
+    return render(request, 'encyklopedia_app/o_aplikacji.html', {'form' : form})
 
 def domowa_apteczka(request):
     return render(request, 'encyklopedia_app/domowa_apteczka.html', {})

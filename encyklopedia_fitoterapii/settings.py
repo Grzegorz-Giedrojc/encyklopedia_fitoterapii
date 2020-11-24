@@ -136,3 +136,12 @@ CRISPY_TEMPLATE_PACK="bootstrap4"
 
 LOGIN_REDIRECT_URL = "/domowa_apteczka/"
 LOGOUT_REDIRECT_URL = "/"
+
+SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
