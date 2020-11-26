@@ -9,7 +9,7 @@ def register(response):
         if form.is_valid():
             form.save()
 
-        return redirect("")
+        return redirect("post_list")
     else:
         form = RegisterForm()
 

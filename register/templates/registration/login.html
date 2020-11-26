@@ -5,8 +5,8 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="jumbotron mb-0"
-  <form class="form-group" method="POST">
+<div class="jumbotron mb-0">
+  <form class="form-group" action="." method="POST">
     {% csrf_token %}
     {{form|crispy}}
     <div class="row justify-content-center">

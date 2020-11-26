@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'encyklopedia_fitoterapii.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'encyklopedia_fitoterapii',
+        'NAME':'encyklopedia_fitoterapii_1',
         'USER':'root',
         'PASSWORD':'',
         'HOST':'127.0.0.1',

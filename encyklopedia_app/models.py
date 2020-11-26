@@ -7,10 +7,10 @@ from django.utils import timezone
 class Post(models.Model):
     autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     nazwa = models.CharField(max_length=200, unique=True)
-    krotki_opis = models.TextField()
-    opis = models.TextField()
-    choroby = models.TextField()
-    zastosowanie = models.TextField()
+    krotki_opis = models.TextField(default='Krotki opis')
+    opis = models.TextField(default='Opis')
+    choroby = models.TextField(default='Choroby')
+    zastosowanie = models.TextField(default='Zastosowanie')
     zdjecie = models.ImageField(default='default.png')
     created_date = models.DateTimeField(
             default=timezone.now)

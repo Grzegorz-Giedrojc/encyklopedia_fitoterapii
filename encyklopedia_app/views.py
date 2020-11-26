@@ -46,7 +46,7 @@ def o_aplikacji(request):
             message = form.cleaned_data["message"]
             recipients = ['grzesiekodkrywaja@gmail.com']
             try:
-                send_mail(subject, message, forms.email, recipients, fail_silently=True)
+                send_mail(subject, message, 'giedrojc1012@wp.pl', ['grzesiekodkrywaja@gmail.com'], fail_silently=True)
             except BadHeaderError:
                 return HttpResponse('Invalid header found')
             return HttpResponse('Success...Your email has been sent')
