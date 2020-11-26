@@ -1,5 +1,7 @@
 {% extends 'encyklopedia_app/base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block content %}
 
 <div class="jumbotron mb-0">
@@ -31,8 +33,8 @@
         {% for field in form.visible_fields %}
         <div class="form-group">
             {{ field.errors }}
-            <label>{{ field.label_tag }}</label>
-            <p>{{ field }}</p>
+            <label class="label-tag">{{ field.label_tag }}</label>
+            <p class="field">{{ field }}</p>
         </div>
         {% endfor %}
 

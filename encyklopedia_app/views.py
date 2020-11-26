@@ -49,7 +49,7 @@ def o_aplikacji(request):
                 send_mail(subject, message, 'giedrojc1012@wp.pl', ['grzesiekodkrywaja@gmail.com'], fail_silently=True)
             except BadHeaderError:
                 return HttpResponse('Invalid header found')
-            return HttpResponse('Success...Your email has been sent')
+            return redirect('o_aplikacji')
 
     return render(request, 'encyklopedia_app/o_aplikacji.html', {'form' : form})
 
