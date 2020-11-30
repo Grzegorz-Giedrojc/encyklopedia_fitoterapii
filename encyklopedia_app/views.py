@@ -10,6 +10,7 @@ from django.shortcuts import render, redirect
 from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
+from django.contrib.auth.models import User
 
 
 def post_list(request):
@@ -53,5 +54,5 @@ def o_aplikacji(request):
 
     return render(request, 'encyklopedia_app/o_aplikacji.html', {'form' : form})
 
-def domowa_apteczka(request):
+def domowa_apteczka(request, pk):
     return render(request, 'encyklopedia_app/domowa_apteczka.html', {})

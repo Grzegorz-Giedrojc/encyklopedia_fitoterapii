@@ -7,7 +7,6 @@ from django.utils import timezone
 class Post(models.Model):
     autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     nazwa = models.CharField(max_length=200, unique=True)
-    krotki_opis = models.TextField(default='Krotki opis')
     opis = models.TextField(default='Opis')
     choroby = models.TextField(default='Choroby')
     zastosowanie = models.TextField(default='Zastosowanie')
@@ -23,3 +22,6 @@ class Post(models.Model):
 
     def __str__(self):
         return self.nazwa
+
+class Post_apteczka(models.Model):
+    ziola = models.ManyToManyField(Post)

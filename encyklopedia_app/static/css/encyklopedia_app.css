@@ -148,18 +148,9 @@ footer{
 	font-weight: 400;
 	color: #fff;
 	font-size: 42px;
-	margin: 0 30px;
-	padding: 100px 0 0 0;
+	text-align: center;
+	margin-top: 122px;
 	line-height: 1.5;
-}
-
-.opis p {
-	font-family: 'Open Sans', sans-serif;
-	color: #fff;
-	padding: 4px 5px;
-	margin: 0 30px;
-	font-size: 14px;
-	line-height: 2;
 }
 
 .paginator {
@@ -200,6 +191,13 @@ footer{
   font-family: 'Bree Serif', serif;
 	font-weight: 400;
 	font-size: 4em;
+}
+
+/*DOMOWA APTECZKA*/
+
+.wybor{
+  text-transform: capitalize;
+  text-align: center;
 }
 
 /* OGÓLNE */
