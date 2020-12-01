@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import Post
+from .models import Post, ListaZiol
 from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.db.models import Q
@@ -54,5 +54,17 @@ def o_aplikacji(request):
 
     return render(request, 'encyklopedia_app/o_aplikacji.html', {'form' : form})
 
-def domowa_apteczka(request, pk):
-    return render(request, 'encyklopedia_app/domowa_apteczka.html', {})
+def domowa_apteczka(request):
+    ziolo = ListaZiol.objects.get(current_user=request.user)
+    listazioll = ziolo.ziola.all()
+
+    return render(request, 'encyklopedia_app/domowa_apteczka.html', {'listazioll' : listazioll})
+
+def zmien_ziolo(request, operation, pk):
+    post = get_object_or_404(Post, pk=pk)
+    nowe_ziolo = Post.object.get(pk=pk)
+    if operation == 'add':
+        ListaZiol.dodaj_ziolo(request.user, nowe_ziolo)
+    elif operation == 'remove':
+        ListaZiol.usun_ziolo(request.user, nowe_ziolo)
+    return render(request, 'encyklopedia_app/post_detail.html', {'post': post})

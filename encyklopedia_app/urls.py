@@ -5,6 +5,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from .views import *
+from . import views
 
 urlpatterns = [
     path('', views.post_list, name='post_list'),
@@ -13,6 +14,7 @@ urlpatterns = [
     path('fitoterapia/',views.fitoterapia, name="fitoterapia"),
     path('o_aplikacji/',views.o_aplikacji, name="o_aplikacji"),
     path('domowa_apteczka/',views.domowa_apteczka, name="domowa_apteczka"),
+    path('connect/<operation>/<int:pk>/', views.zmien_ziolo, name="zmien_ziolo"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

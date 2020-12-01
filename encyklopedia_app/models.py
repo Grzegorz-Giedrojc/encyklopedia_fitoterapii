@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -13,7 +14,7 @@ class Post(models.Model):
     zdjecie = models.ImageField(default='default.png')
     created_date = models.DateTimeField(
             default=timezone.now)
-    published_date = models.DateTimeField(
+    published_date = models.DateTimeField(default=timezone.now,
             blank=True, null=True)
 
     def publish(self):
@@ -23,5 +24,20 @@ class Post(models.Model):
     def __str__(self):
         return self.nazwa
 
-class Post_apteczka(models.Model):
+class ListaZiol(models.Model):
     ziola = models.ManyToManyField(Post)
+    current_user = models.ForeignKey(User, related_name='owner', null=True, on_delete=models.DO_NOTHING)
+
+    @classmethod
+    def dodaj_ziolo(cls, current_user, nowe_ziolo):
+        listaziol, created = cls.objects.get_or_create(
+            current_user = current_user
+        )
+        listaziol.ziola.add(nowe_ziolo)
+
+    @classmethod
+    def usun_ziolo(cls, current_user, nowe_ziolo):
+        listaziol, created = cls.objects.get_or_create(
+            current_user = current_user
+        )
+        listaziol.ziola.remove(nowe_ziolo)
