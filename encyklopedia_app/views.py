@@ -60,11 +60,14 @@ def domowa_apteczka(request):
 
     return render(request, 'encyklopedia_app/domowa_apteczka.html', {'listazioll' : listazioll})
 
-def zmien_ziolo(request, operation, pk):
+def dodaj_ziolo(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    nowe_ziolo = Post.object.get(pk=pk)
-    if operation == 'add':
-        ListaZiol.dodaj_ziolo(request.user, nowe_ziolo)
-    elif operation == 'remove':
-        ListaZiol.usun_ziolo(request.user, nowe_ziolo)
+    nowe_ziolo = Post.objects.get(pk=pk)
+    ListaZiol.dodaj_ziolo(request.user, nowe_ziolo)
+    return render(request, 'encyklopedia_app/post_detail.html', {'post': post})
+
+def usun_ziolo(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    nowe_ziolo = Post.objects.get(pk=pk)
+    ListaZiol.usun_ziolo(request.user, nowe_ziolo)
     return render(request, 'encyklopedia_app/post_detail.html', {'post': post})

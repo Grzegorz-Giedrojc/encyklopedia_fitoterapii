@@ -14,7 +14,8 @@ urlpatterns = [
     path('fitoterapia/',views.fitoterapia, name="fitoterapia"),
     path('o_aplikacji/',views.o_aplikacji, name="o_aplikacji"),
     path('domowa_apteczka/',views.domowa_apteczka, name="domowa_apteczka"),
-    path('connect/<operation>/<int:pk>/', views.zmien_ziolo, name="zmien_ziolo"),
+    path('connect/add/<int:pk>/', views.dodaj_ziolo, name="dodaj_ziolo"),
+    path('connect/remove/<int:pk>/', views.usun_ziolo, name="usun_ziolo"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
