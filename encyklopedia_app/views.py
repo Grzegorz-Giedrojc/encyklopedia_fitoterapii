@@ -11,6 +11,7 @@ from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 
 def post_list(request):
@@ -64,10 +65,12 @@ def dodaj_ziolo(request, pk):
     post = get_object_or_404(Post, pk=pk)
     nowe_ziolo = Post.objects.get(pk=pk)
     ListaZiol.dodaj_ziolo(request.user, nowe_ziolo)
+    messages.success(request, 'Dodano do apteczki')
     return render(request, 'encyklopedia_app/post_detail.html', {'post': post})
 
 def usun_ziolo(request, pk):
     post = get_object_or_404(Post, pk=pk)
     nowe_ziolo = Post.objects.get(pk=pk)
     ListaZiol.usun_ziolo(request.user, nowe_ziolo)
+    messages.info(request, 'Usunięto z apteczki')
     return render(request, 'encyklopedia_app/post_detail.html', {'post': post})
