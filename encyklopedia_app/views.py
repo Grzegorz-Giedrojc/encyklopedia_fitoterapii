@@ -18,7 +18,7 @@ def post_list(request):
 
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('nazwa')
 
-    paginator = Paginator(posts,3)
+    paginator = Paginator(posts,9)
 
     page = request.GET.get('page')
 
@@ -34,6 +34,7 @@ def search(request):
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
+
     return render(request, 'encyklopedia_app/post_detail.html', {'post': post})
 
 def fitoterapia(request):

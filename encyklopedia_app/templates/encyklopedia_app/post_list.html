@@ -8,7 +8,7 @@
       <li>
         <a href="{% url 'post_detail' pk=post.pk %}">
           <div class="element" style="background: linear-gradient( rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.10)), url({{post.zdjecie.url}}); height: 100%; width: 100%; background-position: center;">
-            <div class="opis" >
+            <div class="opis d-flex align-items-center justify-content-center">
               <h3 style="text-transform: uppercase;">{{ post.nazwa }}</h3>
             </div>
           </div>
