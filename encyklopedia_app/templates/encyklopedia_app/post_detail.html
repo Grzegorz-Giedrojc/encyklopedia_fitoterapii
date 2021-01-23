@@ -14,9 +14,13 @@
           {{ post.nazwa }}
         </div>
         <div class="row" style="margin-top: 20px;">
-          <img src="{{post.zdjecie.url}}" class="img-fluid rounded col-lg-4" style="object-fit: cover;" alt= "zdjecie rośliny"/>
-
-          <p class="col-lg-6 text-justify" style="font-size: 22px;"><br class="d-lg-none"/>{{ post.opis|linebreaksbr }}</p>
+          <div class="col-lg-4">
+            <img src="{{post.zdjecie.url}}" class="img-fluid rounded" style="object-fit: cover;" alt= "zdjecie rośliny"/>
+            <p style="text-align: left; padding-top: 10px;">
+              &copy; Pixabay
+            </p>
+          </div>
+          <p class="col-lg-6 text-justify" style="font-size: 22px;">{{ post.opis|linebreaksbr }}</p>
           {% if user.is_authenticated %}
               <p class="col-lg-1 text-justify">
                 <a href="{% url 'usun_ziolo' pk=post.pk %}"><button class="btn btn-danger my-2 my-sm-0" type="submit">Usuń</button></a>
@@ -27,9 +31,7 @@
               </p>
           {% endif %}
         </div>
-        <p style="text-align: left;">
-          &copy; Pixabay
-        </p>
+
         <br />
         <hr />
         <br />
